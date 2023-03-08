@@ -85,6 +85,9 @@ bf <- function(x) {
     return(x)
 }
 
+## ----install_cran, eval = FALSE-----------------------------------------------
+#  install.packages("hydflood")
+
 ## ----install_git, eval = FALSE------------------------------------------------
 #  install.packages("devtools")
 #  library(devtools)

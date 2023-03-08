@@ -12,7 +12,7 @@
 
 <meta name="author" content="Arnd Weber" />
 
-<meta name="date" content="2023-01-16" />
+<meta name="date" content="2023-03-07" />
 
 <title>hydflood - Vignette</title>
 
@@ -363,7 +363,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">hydflood - Vignette</h1>
 <h4 class="author">Arnd Weber</h4>
-<h4 class="date">2023-01-16</h4>
+<h4 class="date">2023-03-07</h4>
 
 
 <div id="TOC">
@@ -417,16 +417,18 @@ Rhine.</p>
 <h1>Use</h1>
 <div id="installation" class="section level2">
 <h2>Installation</h2>
-<p>The package <strong>hydflood</strong> is currently not available from
-CRAN. To install the recent developmental version from the Github
-execute the following commands:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;bafg-bund/hydflood&quot;</span>)</span></code></pre></div>
+<p>The package <strong>hydflood</strong> is available from CRAN. To
+install it run:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;hydflood&quot;</span>)</span></code></pre></div>
+<p>To install the recent developmental version from Github execute the
+following commands:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;bafg-bund/hydflood&quot;</span>)</span></code></pre></div>
 <p>Afterwards <strong>hydflood</strong> can be loaded like every other R
 package with the following command:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">&quot;hydflood.datadir&quot;</span> <span class="ot">=</span> <span class="fu">tempdir</span>())</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hydflood)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">&quot;hydflood.datadir&quot;</span> <span class="ot">=</span> <span class="fu">tempdir</span>())</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hydflood)</span></code></pre></div>
 </div>
 <div id="dependencies" class="section level2">
 <h2>Dependencies</h2>
@@ -535,13 +537,13 @@ the German Waterway and Shipping Administration with 1 m spatial
 resolution. Therefore you definitely need internet access and, due to
 the data volume of the elevation data, your internet should be fast or
 you should be patient.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import the raster data and create a raster stack</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">hydSpatRaster</span>(<span class="at">filename_dem =</span> <span class="st">&quot;data-raw/raster.dem.tif&quot;</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">filename_csa =</span> <span class="st">&quot;data-raw/raster.csa.tif&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import the raster data and create a raster stack</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">hydSpatRaster</span>(<span class="at">filename_dem =</span> <span class="st">&quot;data-raw/raster.dem.tif&quot;</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">filename_csa =</span> <span class="st">&quot;data-raw/raster.csa.tif&quot;</span>)</span></code></pre></div>
 <p>After initialinzig an object of type <code>hydSpatRaster</code>
 everything else is straight forward. Create a temporal sequence
 <code>seq</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2016-12-01&quot;</span>), <span class="fu">as.Date</span>(<span class="st">&quot;2016-12-31&quot;</span>), <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2016-12-01&quot;</span>), <span class="fu">as.Date</span>(<span class="st">&quot;2016-12-31&quot;</span>), <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)</span></code></pre></div>
 <p>And supply both of them to the <code>flood3</code> function, which
 will do the computation and return an ‘INT4S’ raster with counts of how
 often the individual cell of the <code>dem</code> was lower than the
@@ -551,11 +553,11 @@ is computed, joined to <code>csa</code> through the
 <code>station_int</code> column and compared to the <code>dem</code> so
 that the possible values of the returned product range between 0 and
 <code>length(seq)</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute a flood duration</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fd <span class="ot">&lt;-</span> <span class="fu">flood3</span>(<span class="at">x =</span> x, <span class="at">seq =</span> seq)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># and plot it</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fd)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute a flood duration</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fd <span class="ot">&lt;-</span> <span class="fu">flood3</span>(<span class="at">x =</span> x, <span class="at">seq =</span> seq)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># and plot it</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fd)</span></code></pre></div>
 <p><BR></p>
 </div>
 </div>
