@@ -10,7 +10,7 @@ w80ToSFP(filename, crs)
 \item{filename}{argument of length 1 and type \code{character} specifying
 an existing w80-file.}
 
-\item{crs}{argument of type \code{\link[sp]{CRS}} or \code{\link[terra]{crs}}.}
+\item{crs}{argument of type \code{\link[sf:st_crs]{crs}} or \code{\link[terra]{crs}}.}
 }
 \value{
 \code{sfc_POINT}.

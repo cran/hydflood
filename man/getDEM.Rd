@@ -13,7 +13,8 @@ type \code{character}.}
 
 \item{ext}{argument of type \code{\link[terra]{SpatExtent}}.}
 
-\item{crs}{argument of type \code{\link[sp]{CRS}} or \code{\link[terra]{crs}}. It is
+\item{crs}{argument of type \code{\link[sf:st_crs]{crs}} or
+\code{\link[terra]{crs}}. It is
 used to select the respective river (Elbe: \href{https://spatialreference.org/ref/epsg/etrs89-utm-zone-33n/}{'ETRS 1989 UTM 33N'}; Rhine:
 \href{https://spatialreference.org/ref/epsg/etrs89-utm-zone-32n/}{'ETRS 1989 UTM 32N'})}
 
@@ -37,10 +38,14 @@ modify the location of your raster cache to your needs set the respective
 \code{options("hydflood.datadir" = "~/.hydflood");library(hydflood)}. The
 location can also be determined through the environmental variable
 \env{hydflood_datadir}.
+
+Since downloads of large individual datasets might cause timeouts, it is
+recommended to increase \code{options("timeout")}.
 }
 \examples{
 \donttest{
   options("hydflood.datadir" = tempdir())
+  options("timeout" = 120)
   library(hydflood)
   dem <- getDEM(ext = ext(c(309000, 310000, 5749000, 5750000)),
                 crs = st_crs("EPSG:25833"))

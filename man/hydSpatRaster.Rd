@@ -63,7 +63,8 @@ datasets. If either \code{filename_dem} or \code{filename_csa} or both are
 specified, \code{ext} must be within the extent of provided raster layers.
 Then it is used to \code{\link[terra]{crop}} the supplied data.}
 
-\item{crs}{optional argument of type \code{\link[sp]{CRS}} or \code{\link[terra]{crs}}. If
+\item{crs}{optional argument of type \code{\link[sf:st_crs]{crs}} or
+\code{\link[terra]{crs}}. If
 neither \code{filename_dem} nor \code{filename_csa} are specified,
 \code{crs} is used to select the respective river (Elbe:
 'ETRS 1989 UTM 33N' (epsg: 25833); Rhine: 'ETRS 1989 UTM 32N' (epsg:
@@ -95,10 +96,14 @@ modify the location of your raster cache to your needs set the respective
 \code{options("hydflood.datadir" = "~/.hydflood");library(hydflood)}. The
 location can also be determined through the environmental variable
 \env{hydflood_datadir}.
+
+Since downloads of large individual datasets might cause timeouts, it is
+recommended to increase \code{options("timeout")}.
 }
 \examples{
 \donttest{
   options("hydflood.datadir" = tempdir())
+  options("timeout" = 120)
   library(hydflood)
   
   e <- ext(436500, 438000, 5415000, 5416500)

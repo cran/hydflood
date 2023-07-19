@@ -85,28 +85,28 @@ bf <- function(x) {
     return(x)
 }
 
-## ----install_cran, eval = FALSE-----------------------------------------------
+## ----install-cran, eval = FALSE-----------------------------------------------
 #  install.packages("hydflood")
 
-## ----install_git, eval = FALSE------------------------------------------------
+## ----install-git, eval = FALSE------------------------------------------------
 #  install.packages("devtools")
 #  library(devtools)
 #  devtools::install_github("bafg-bund/hydflood")
 
-## ----library_print, eval = FALSE, echo = TRUE---------------------------------
+## ----library-print, eval = FALSE, echo = TRUE---------------------------------
 #  options("hydflood.datadir" = tempdir())
 #  library(hydflood)
 
-## ----figure_dem, fig.show = 'asis', fig.cap = capFig("Digital elevation model of the waterway (DEM-W, in German: Digitales Geländemodell des Wasserlaufs, DGM-W) with 1 m spatial resolution at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
+## ----figure-dem, fig.show = 'asis', fig.cap = capFig("Digital elevation model of the waterway (DEM-W, in German: Digitales Geländemodell des Wasserlaufs, DGM-W) with 1 m spatial resolution at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
 knitr::include_graphics('./screenshot_hydflood_dem.png')
 
-## ----figure_cs, fig.show = 'asis', fig.cap = capFig("Cross sections produced to gather input data for SOBEK models used in [FLYS](https://www.bafg.de/DE/08_Ref/M2/03_Fliessgewmod/01_FLYS/flys_node.html) at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
+## ----figure-cs, fig.show = 'asis', fig.cap = capFig("Cross sections produced to gather input data for SOBEK models used in [FLYS](https://www.bafg.de/DE/08_Ref/M2/03_Fliessgewmod/01_FLYS/flys_node.html) at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
 knitr::include_graphics('./screenshot_hydflood_crosssections.png')
 
-## ----figure_csa, fig.show = 'asis', fig.cap = capFig("Cross section areas derived from the cross sections illustrated in Fig. 2 at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
+## ----figure-csa, fig.show = 'asis', fig.cap = capFig("Cross section areas derived from the cross sections illustrated in Fig. 2 at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
 knitr::include_graphics('./screenshot_hydflood_crosssectionareas.png')
 
-## ----figure_csacs, fig.show = 'asis', fig.cap = capFig("Cross section areas illustrated in Fig. 3 overlaid by the corresponding cross sections illustrated in Fig. 2 at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
+## ----figure-csacs, fig.show = 'asis', fig.cap = capFig("Cross section areas illustrated in Fig. 3 overlaid by the corresponding cross sections illustrated in Fig. 2 at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
 knitr::include_graphics('./screenshot_hydflood_crosssectionareas_cs.png')
 
 ## ----init, eval = FALSE, error = FALSE, warning = FALSE, message = FALSE------
@@ -124,13 +124,13 @@ knitr::include_graphics('./screenshot_hydflood_crosssectionareas_cs.png')
 #  # and plot it
 #  plot(fd)
 
-## ----link_flood3daily, eval = is_html, echo = FALSE, results = 'asis'---------
+## ----link-flood3daily, eval = is_html, echo = FALSE, results = 'asis'---------
 cat('<p style="text-align: center;"><a href="https://shiny.bafg.de/flood3daily/" target="_blank">https://shiny.bafg.de/flood3daily/</a></p>')
 
 ## ----figure1, echo = FALSE, fig.cap = capFig(paste0("Screenshot of the ", href("flood3daily-ShinyApp", "https://shiny.bafg.de/flood3daily/"), " with the modelled flood extent computed for 2016-12-21 at the River Elbe between Rosslau and Dessau, Germany.")), fig.show = 'asis', out.width = "100%"----
 knitr::include_graphics('screenshot_flood3daily.png')
 
-## ----link_waterlevelpegelonline, eval = is_html, echo = FALSE, results = 'asis'----
+## ----link-waterlevelpegelonline, eval = is_html, echo = FALSE, results = 'asis'----
 cat('<p style="text-align: center;"><a href="https://shiny.bafg.de/flood3wms/" target="_blank">https://shiny.bafg.de/flood3wms/</a></p>')
 
 ## ----figure2, echo = FALSE, fig.cap = capFig(paste0("Screenshot of the ", href("flood3wms-ShinyApp", "https://shiny.bafg.de/flood3wms/"), " with the annual flood duration of 2016 at the River Elbe between Rosslau and Dessau, Germany.")), fig.show = 'asis', out.width = "100%"----
