@@ -3,6 +3,7 @@
 \docType{package}
 \name{hydflood}
 \alias{hydflood}
+\alias{hydflood-package}
 \title{hydflood: Flood Extents and Durations along the Rivers Elbe and Rhine}
 \description{
 Raster based flood modelling internally using \pkg{hyd1d}, an
