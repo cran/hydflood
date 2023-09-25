@@ -12,7 +12,7 @@
 
 <meta name="author" content="Arnd Weber" />
 
-<meta name="date" content="2023-08-21" />
+<meta name="date" content="2023-09-25" />
 
 <title>hydflood - Vignette</title>
 
@@ -363,7 +363,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">hydflood - Vignette</h1>
 <h4 class="author">Arnd Weber</h4>
-<h4 class="date">2023-08-21</h4>
+<h4 class="date">2023-09-25</h4>
 
 
 <div id="TOC">
@@ -449,7 +449,7 @@ spatial resolution at the River Elbe near Rosslau and Dessau.
 </p>
 </div>
 <p><strong>hydflood</strong> provides download facilities for the
-digital elevation models of the waterways Rhine and Elbe (DEM, <span class="citation">A. Weber (<a href="#ref-weber_dgms_2020" role="doc-biblioref">2020</a>)</span>) with 1 m spatial resolution for
+digital elevation models of the waterways Rhine and Elbe (DEM, <span class="citation">Weber (<a href="#ref-weber_dgms_2020" role="doc-biblioref">2020</a>)</span>) with 1 m spatial resolution for
 chosen extents. If necessary, alternative <code>dem</code>’s can be
 supplied by users. They just need to overlap with active floodplains of
 either the Rhine (<a href="https://hydflood.bafg.de/reference/sf.afr.html"><code>sf.afr</code></a>)
@@ -567,8 +567,8 @@ that the possible values of the returned product range between 0 and
 <h2>Raster data</h2>
 <p>Raster data with annual flood durations between 1960 and 2021 for the
 active floodplains of the River Rhine and the River Elbe have been
-submitted to and published on <a href="https://www.pangaea.de">pangaea.de</a> <span class="citation">(<a href="#ref-weber_flood3data_2022" role="doc-biblioref">Arnd Weber,
-2022</a>)</span>.</p>
+submitted to and published on <a href="https://www.pangaea.de">pangaea.de</a> <span class="citation">(<a href="#ref-weber_flood3data_2022" role="doc-biblioref">Weber, 2022</a>,
+<a href="#ref-weber_flood3data_2023" role="doc-biblioref">2023</a>)</span>.</p>
 <p><BR></p>
 </div>
 <div id="shinyapps" class="section level2">
@@ -600,7 +600,7 @@ between Rosslau and Dessau, Germany.
 <p>The <a href="https://hydflood.bafg.de/reference/flood3.html"><code>flood3</code></a>
 function is the central function of the package
 <strong>hydflood</strong>. With the help of this function annual flood
-durations between 1990 and 2021 have been computed for the active
+durations between 1990 and 2022 have been computed for the active
 floodplains of the River Rhine and the River Elbe. These large scale
 raster products have been visualized as web map services and are
 available through a shiny web application:</p>
@@ -629,15 +629,19 @@ BfG-Bericht, Bundesanstalt für Gewässerkunde, Koblenz, Germany:
 Bundesanstalt für Gewässerkunde, Koblenz, Germany. <a href="https://doi.org/10.5675/BfG-2011">https://doi.org/10.5675/BfG-2011</a>
 </div>
 <div id="ref-weber_flood3data_2022" class="csl-entry">
-Weber, Arnd. (2022). <span class="nocase">Flood durations and potential
+Weber, A. (2022). <span class="nocase">Flood durations and potential
 natural vegetation distribution on the floodplains of River Rhine and
 River Elbe, Germany</span>. data set, PANGAEA. <a href="https://doi.org/10.1594/PANGAEA.948042">https://doi.org/10.1594/PANGAEA.948042</a>
 </div>
+<div id="ref-weber_flood3data_2023" class="csl-entry">
+Weber, A. (2023). <span class="nocase">Flood durations of the year 2022
+on the floodplains of River Rhine and River Elbe, Germany</span>. data
+set, PANGAEA. <a href="https://doi.org/10.1594/PANGAEA.961117">https://doi.org/10.1594/PANGAEA.961117</a>
+</div>
 <div id="ref-weber_hyd1d_2022" class="csl-entry">
-Weber, Arnd, &amp; Hatz, M. (2023). hyd1d - <span>A</span>lgorythms to
-<span>C</span>ompute 1d <span>W</span>ater <span>L</span>evels along the
-<span>G</span>erman <span>F</span>ederal <span>W</span>aterways
-<span>E</span>lbe and <span>R</span>hine. <a href="https://hyd1d.bafg.de/index.html">https://hyd1d.bafg.de/index.html</a>
+Weber, A., &amp; Hatz, M. (2023). hyd1d: 1d <span>W</span>ater
+<span>L</span>evel <span>I</span>nterpolation along the
+<span>R</span>ivers <span>E</span>lbe and <span>R</span>hine. <a href="https://hyd1d.bafg.de/index.html">https://hyd1d.bafg.de/index.html</a>
 </div>
 </div>
 </div>

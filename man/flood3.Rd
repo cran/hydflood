@@ -70,6 +70,11 @@ increased by 1.
 }
 
 }
+\references{
+\insertRef{weber_flood3data_2022}{hydflood}
+
+\insertRef{weber_flood3data_2023}{hydflood}
+}
 \seealso{
 \code{\link[hyd1d]{waterLevel}},
 \code{\link[hyd1d]{waterLevelPegelonline}},

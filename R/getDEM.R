@@ -218,7 +218,7 @@ getDEM <- function(filename = '', ext, crs, ...) {
     #####
     # processing
     if (crop) {
-        return(terra::crop(raster.dem, sf.ext))
+        return(terra::crop(raster.dem, vect(sf.ext)))
     }
     if (file.exists(filename) & missing(ext) & missing(crs)) {
         return(raster.dem)
@@ -229,8 +229,8 @@ getDEM <- function(filename = '', ext, crs, ...) {
         }
     }
     
-    nrows <- as.integer((ext_int@ptr$vector[4] - ext_int@ptr$vector[3]))
-    ncols <- as.integer((ext_int@ptr$vector[2] - ext_int@ptr$vector[1]))
+    nrows <- as.integer(ymax(ext_int) - ymin(ext_int))
+    ncols <- as.integer(xmax(ext_int) - xmin(ext_int))
     
     in_memory <- raster::canProcessInMemory(raster::raster(nrows = nrows,
                                                            ncols = ncols,
@@ -256,12 +256,15 @@ getDEM <- function(filename = '', ext, crs, ...) {
     
     merge_files <- list(nrow(sf.tiles))
     missing_files <- NA_character_
+    mode <- ifelse(.Platform$OS.type == "windows", "wb", "w")
     for (i in 1:nrow(sf.tiles)) {
         file <- paste0(options()$hydflood.datadir, "/", sf.tiles$name[i],
                        "_DEM.tif")
         if (!file.exists(file)) {
+            
             tryCatch({
-                utils::download.file(sf.tiles$url[i], file, quiet = TRUE)
+                utils::download.file(sf.tiles$url[i], file, quiet = TRUE,
+                                     mode = mode)
             }, error = function(e){
                 mess <- paste0("It was not possible to download:\n",
                                sf.tiles$url[i], "\nPlease try again!")
