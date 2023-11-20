@@ -1,6 +1,6 @@
-3284ffdf111f7108ca9158fe3833689c *DESCRIPTION
+c87861e66819803f47836b8c60849443 *DESCRIPTION
 67d4cca19e0e0e43a8a1c95163d41b9d *NAMESPACE
-c80d172a7f4ff338fee611b339174ea4 *NEWS.md
+57c352d91a53d6692ee2d9f2588890d2 *NEWS.md
 94c505b534844a7b4b012b67a437c6b9 *R/classifyToPNV.R
 d7c6918c0a51d2e13daf4d0ca10ee4c8 *R/createTiles.R
 a564e6a3ffd6d100ef68b428a9abd278 *R/data.R
@@ -14,9 +14,9 @@ a86c16203a35ab5044aa54ad6453f394 *R/hydflood-internal.R
 b4a4399d20e93eb8b2072691d34d217f *R/hydflood.R
 3b921f8f4468d3acbc4a0e48fc26932c *R/w80ToSpatial.R
 1ee6d8e6f3093d9aeca7c2a02a1ba251 *R/zzz.R
-2555d40040e725b6fc33448d9a778e84 *README.md
-5a068187855ef4f205512aefce4dd48e *build/partial.rdb
-1cef228416bb74a1246fc29454010f28 *build/vignette.rds
+d14c5d396dce0e5ac63088cbd5a5c722 *README.md
+39fa90935e49e6bdaa261e1e12ebdf70 *build/partial.rdb
+e80198cde8aed1c37eaf7c72a9352913 *build/vignette.rds
 2246716f8b4f31f785330e6604016a50 *data/df.pnv.rda
 bf626c9b0bf997dada143c3b8e0eb5e4 *data/sf.afe.rda
 9793825fa13adc93e800a210b5d50be5 *data/sf.afr.rda
@@ -26,11 +26,12 @@ d2170d62778ab8a594d4e4b43ae0794f *inst/CITATION
 4f6c5162169f28b867e30413e209388b *inst/REFERENCES.bib
 43159dea73f926807065441ea347fc52 *inst/doc/hydflood.R
 3ea600be136ffebdd220270eba1782cc *inst/doc/hydflood.Rmd
-9518e899b5721e496be1c05075683629 *inst/doc/hydflood.html
+d6ec08c24063aa00aa810476cb825f64 *inst/doc/hydflood.html
 67dca3feda0816f4b15d06e598b5dec2 *man/classifyToPNV.Rd
 c337679237bb49c375f22dc747cc4dfb *man/createTiles.Rd
 22d7a192db08b412ecf09e7c2fc71e86 *man/df.pnv.Rd
 267ece7b6d244cf508ac69990a5f98e3 *man/figures/README-usage-1.png
+44116d11cabb64b4e20d1065b6fa7d21 *man/figures/logo.png
 cb0c944128547180f54ba5735761a351 *man/flood1.Rd
 76b650a7d5f2ffb1a1b9868389b18cc9 *man/flood2.Rd
 382ac42df30a7b8363c970bde0d27bdd *man/flood3.Rd
