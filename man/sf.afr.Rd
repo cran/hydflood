@@ -14,7 +14,7 @@ sf.afr
 This dataset contains a polygon of the active floodplain along
 the German, freeflowing parts of the River Rhine from the weir Iffezheim to
 the Dutch border in the coordinate reference system
-\href{https://spatialreference.org/ref/epsg/etrs89-utm-zone-32n/}{ETRS 1989 UTM 32N}.
+\href{https://spatialreference.org/ref/epsg/25832/}{ETRS 1989 UTM 32N}.
 
 Originally, this polygon was produced for the floodplain status report
 (Auenzustandsbericht; Brunotte et al. (2009), Bundesamt für Naturschutz

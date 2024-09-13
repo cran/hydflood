@@ -29,7 +29,7 @@ the coordinate reference system (\code{\link[terra]{crs}}), extent
 of both raster datasets must match.
 
 Supported file types depend on available
-\href{https://gdal.org/drivers/raster/index.html}{GDAL raster drivers}.}
+\href{https://gdal.org/en/latest/drivers/raster/index.html}{GDAL raster drivers}.}
 
 \item{filename_csa}{an optional argument of length 1 with type
 \code{character} specifying a filename of a \strong{c}ross \strong{s}ection
@@ -54,7 +54,7 @@ and resolution (\code{\link[terra]{res}}) of both raster datasets must
 match.
 
 Supported file types depend on available
-\href{https://gdal.org/drivers/raster/index.html}{GDAL raster drivers}.}
+\href{https://gdal.org/en/latest/drivers/raster/index.html}{GDAL raster drivers}.}
 
 \item{ext}{optional argument of type \code{\link[terra]{SpatExtent}}. If neither
 \code{filename_dem} nor \code{filename_csa} are specified, \code{ext} is

@@ -34,7 +34,7 @@ sf.tiles_elbe
 This dataset contains 49 rectangular polygons / tiles along the
 active floodplain along the German interior parts of the River Elbe from the
 Czech border to the weir in Geesthacht in the coordinate reference system
-\href{https://spatialreference.org/ref/epsg/etrs89-utm-zone-33n/}{ETRS 1989 UTM 33N}.
+\href{https://spatialreference.org/ref/epsg/25833/}{ETRS 1989 UTM 33N}.
 
 The tiles represent the original tiling of the internally used digital
 elevation model (Weber 2020).

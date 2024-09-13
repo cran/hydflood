@@ -16,3 +16,22 @@ modelling. Computationally demanding annual flood durations have been
 computed already and data products were published by Weber (2022)
 \url{doi:10.1594/PANGAEA.948042}.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://hydflood.bafg.de}
+  \item \url{https://github.com/bafg-bund/hydflood}
+  \item Report bugs at \url{https://github.com/bafg-bund/hydflood/issues/}
+}
+
+}
+\author{
+\strong{Maintainer}: Arnd Weber \email{arnd.weber@bafg.de} (\href{https://orcid.org/0000-0002-5973-2770}{ORCID})
+
+Other contributors:
+\itemize{
+  \item Stephan Rosenzweig \email{rosenzweig@bafg.de} [contributor]
+  \item Benjamin Eberhardt \email{eberhardt@bafg.de} [contributor]
+}
+
+}

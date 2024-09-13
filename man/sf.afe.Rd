@@ -14,7 +14,7 @@ sf.afe
 This dataset contains a polygon of the active floodplain along
 the German interior parts of the River Elbe from the Czech border to the
 weir in Geesthacht in the coordinate reference system
-\href{https://spatialreference.org/ref/epsg/etrs89-utm-zone-33n/}{ETRS 1989 UTM 33N}.
+\href{https://spatialreference.org/ref/epsg/25833/}{ETRS 1989 UTM 33N}.
 
 Originally, this polygon was produced for the floodplain status report
 (Auenzustandsbericht; Brunotte et al. (2009), Bundesamt für Naturschutz

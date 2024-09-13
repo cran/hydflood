@@ -30,7 +30,7 @@
 #'   of both raster datasets must match.
 #'   
 #'   Supported file types depend on available
-#'   \href{https://gdal.org/drivers/raster/index.html}{GDAL raster drivers}.
+#'   \href{https://gdal.org/en/latest/drivers/raster/index.html}{GDAL raster drivers}.
 #' 
 #' @param filename_csa an optional argument of length 1 with type 
 #'   \code{character} specifying a filename of a **c**ross **s**ection 
@@ -55,7 +55,7 @@
 #'   match.
 #'   
 #'   Supported file types depend on available
-#'   \href{https://gdal.org/drivers/raster/index.html}{GDAL raster drivers}.
+#'   \href{https://gdal.org/en/latest/drivers/raster/index.html}{GDAL raster drivers}.
 #' 
 #' @param ext optional argument of type \code{\link[terra]{SpatExtent}}. If neither 
 #'   \code{filename_dem} nor \code{filename_csa} are specified, \code{ext} is 
@@ -407,14 +407,7 @@ hydSpatRaster <- function(filename_dem = '', filename_csa = '', ext, crs, ...) {
         if (!file.exists(csa_file)) {
             url <- paste0("https://hydflood.bafg.de/downloads/sf.af",
                           tolower(substring(river, 1, 1)), "_csa.rda")
-            mode <- ifelse(.Platform$OS.type == "windows", "wb", "w")
-            tryCatch({
-                utils::download.file(url, csa_file, quiet = TRUE, mode = mode)
-            }, error = function(e){
-                message(paste0("It was not possible to download:\n", url,
-                               "\nTry again later!"))
-                return(NULL)
-            })
+            .download_bfg(url, csa_file)
         }
         load(csa_file)
         if (river == "Elbe") {
@@ -497,3 +490,39 @@ hydSpatRaster <- function(filename_dem = '', filename_csa = '', ext, crs, ...) {
     return(x)
 }
 
+.download_bfg <- function(x, file) {
+    # check internet
+    if (!curl::has_internet()) {
+        stop(paste0("Dataset provided by hydflood.bafg.de is unavailable witho",
+                    "ut internet."), call. = FALSE)
+    }
+    
+    # assemble request
+    req <- httr2::request(x)
+    req <- httr2::req_method(req, "GET")
+    req <- httr2::req_retry(req, max_tries = 10L)
+    req <- httr2::req_timeout(req, seconds = options()$timeout)
+    req <- httr2::req_error(req, is_error = \(resp) FALSE)
+    
+    # perform the request
+    resp <- httr2::req_perform(req, path = file, verbosity = 0)
+    
+    # handle errors
+    status_code <- as.character(resp$status_code)
+    if (startsWith(status_code, "4")) {
+        mess <- paste0("The request to hydflood.bafg.de returned a status code",
+                       " of:\n   '", status_code, " - ",
+                       httr2::resp_status_desc(resp),
+                       "'\nPlease adjust your request accordingly:\n   url: ",
+                       x)
+        stop(mess, call. = FALSE)
+    }
+    if (startsWith(status_code, "5")) {
+        mess <- paste0("The request to hydflood.bafg.de returned a status code",
+                       " of:\n   '", status_code, " - ",
+                       httr2::resp_status_desc(resp),
+                       "'\nPlease try again later.")
+        stop(mess, call. = FALSE)
+    }
+    return(TRUE)
+}

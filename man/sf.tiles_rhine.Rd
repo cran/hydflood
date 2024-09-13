@@ -35,7 +35,7 @@ This dataset contains 40 rectangular polygons / tiles along the
 active floodplain along the German, freeflowing parts of the River Rhine
 from the weir Iffezheim to the Dutch border near Kleve in the coordinate
 reference system
-\href{https://spatialreference.org/ref/epsg/etrs89-utm-zone-32n/}{ETRS 1989 UTM 32N}.
+\href{https://spatialreference.org/ref/epsg/25832/}{ETRS 1989 UTM 32N}.
 
 The tiles represent the original tiling of the internally used digital
 elevation model (Weber 2020).

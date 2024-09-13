@@ -13,8 +13,8 @@
 #' @param ext argument of type \code{\link[terra]{SpatExtent}}.
 #' @param crs argument of type \code{\link[sf:st_crs]{crs}} or 
 #'   \code{\link[terra]{crs}}. It is
-#'   used to select the respective river (Elbe: \href{https://spatialreference.org/ref/epsg/etrs89-utm-zone-33n/}{'ETRS 1989 UTM 33N'}; Rhine:
-#'   \href{https://spatialreference.org/ref/epsg/etrs89-utm-zone-32n/}{'ETRS 1989 UTM 32N'})
+#'   used to select the respective river (Elbe: \href{https://spatialreference.org/ref/epsg/25833/}{'ETRS 1989 UTM 33N'}; Rhine:
+#'   \href{https://spatialreference.org/ref/epsg/25832/}{'ETRS 1989 UTM 32N'})
 #' @param \dots additional arguments as for \code{\link[terra]{writeRaster}}.
 #' 
 #' @return \code{SpatRaster} object containing elevation data for the selected
@@ -256,29 +256,11 @@ getDEM <- function(filename = '', ext, crs, ...) {
     
     merge_files <- list(nrow(sf.tiles))
     missing_files <- NA_character_
-    mode <- ifelse(.Platform$OS.type == "windows", "wb", "w")
     for (i in 1:nrow(sf.tiles)) {
         file <- paste0(options()$hydflood.datadir, "/", sf.tiles$name[i],
                        "_DEM.tif")
         if (!file.exists(file)) {
-            
-            tryCatch({
-                utils::download.file(sf.tiles$url[i], file, quiet = TRUE,
-                                     mode = mode)
-            }, error = function(e){
-                mess <- paste0("It was not possible to download:\n",
-                               sf.tiles$url[i], "\nPlease try again!")
-                w <- warnings()
-                w_mess <- names(w)
-                w_mess <- w_mess[startsWith(w_mess, "URL")]
-                if (grepl("Timeout", w_mess) & grepl("was reached", w_mess)) {
-                    mess <- paste0(mess, "\nSince a timeout was reached, it is",
-                                   " recommended to increase the value of \n",
-                                   "options('timeout') presently set to ",
-                                   options('timeout')$timeout, " seconds.")
-                }
-                message(mess)
-            })
+            .download_pangaea(sf.tiles$url[i], file)
         }
         
         if (file.exists(file)) {
@@ -369,3 +351,82 @@ getDEM <- function(filename = '', ext, crs, ...) {
     
 }
 
+.download_pangaea <- function(x, file) {
+  # check internet
+  if (!curl::has_internet()) {
+    stop("Dataset provided by pangaea.de is unavailable without internet.",
+         call. = FALSE)
+  }
+  
+  # assemble request
+  req <- httr2::request(x)
+  req <- httr2::req_method(req, "GET")
+  req <- httr2::req_retry(req, max_tries = 10L)
+  req <- httr2::req_timeout(req, seconds = options()$timeout)
+  req <- httr2::req_error(req, is_error = \(resp) FALSE)
+  
+  # perform the request
+  resp <- httr2::req_perform(req, path = file, verbosity = 0)
+  
+  # handle errors
+  status_code <- as.character(resp$status_code)
+  if (startsWith(status_code, "4")) {
+    mess <- paste0("\nThe request to pangaea.de returned a status code of:",
+                   "\n   '", status_code, " - ", httr2::resp_status_desc(resp),
+                   "'\nPlease adjust your request accordingly:\n   url: ", x)
+    stop(mess, call. = FALSE)
+  }
+  if (startsWith(status_code, "5")) {
+    # try alternative download from hydflood.bafg.de
+    ad <- .download_bfg_dem(x, file)
+    if (! ad$logical) {
+        mess <- paste0("\nThe request to pangaea.de returned a status code of:",
+                       "\n   '", status_code, " - ",
+                       httr2::resp_status_desc(resp), "'.")
+        mess <- paste0(mess, "\n\n", ad$message)
+        stop(mess, call. = FALSE)
+    }
+  }
+  return(TRUE)
+}
+
+.download_bfg_dem <- function(x, file) {
+    
+    message("Trying alternative download from hydflood.bafg.de")
+    
+    # check internet
+    if (!curl::has_internet()) {
+        stop(paste0("Dataset provided by hydflood.bafg.de is unavailable witho",
+                    "ut internet."), call. = FALSE)
+    }
+    
+    # assemble request
+    file <- basename(x)
+    url <- paste0("https://hydflood.bafg.de/downloads/dem/", file)
+    req <- httr2::request(file)
+    req <- httr2::req_method(req, "GET")
+    req <- httr2::req_retry(req, max_tries = 10L)
+    req <- httr2::req_timeout(req, seconds = options()$timeout)
+    req <- httr2::req_error(req, is_error = \(resp) FALSE)
+    
+    # perform the request
+    resp <- httr2::req_perform(req, path = file, verbosity = 0)
+    
+    # handle errors
+    status_code <- as.character(resp$status_code)
+    if (startsWith(status_code, "4")) {
+        mess <- paste0("The alternative request to hydflood.bafg.de returned a",
+                       " status code of:\n   '",
+                       status_code, " - ", httr2::resp_status_desc(resp),
+                       "'\nPlease adjust your request accordingly:\n   url:", x)
+        return(list(logical = FALSE, message = mess))
+    }
+    if (startsWith(status_code, "5")) {
+        mess <- paste0("The alternative request to hydflood.bafg.de returned a",
+                       " status code of:\n   '",
+                       status_code, " - ", httr2::resp_status_desc(resp),
+                       "'\n\nPlease try again later.")
+        return(list(logical = FALSE, message = mess))
+    }
+    return(list(logical = TRUE, message = NA_character_))
+}

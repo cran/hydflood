@@ -100,7 +100,7 @@ bf <- function(x) {
 ## ----figure-dem, fig.show = 'asis', fig.cap = capFig("Digital elevation model of the waterway (DEM-W, in German: Digitales Geländemodell des Wasserlaufs, DGM-W) with 1 m spatial resolution at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
 knitr::include_graphics('./screenshot_hydflood_dem.png')
 
-## ----figure-cs, fig.show = 'asis', fig.cap = capFig("Cross sections produced to gather input data for SOBEK models used in [FLYS](https://www.bafg.de/DE/08_Ref/M2/03_Fliessgewmod/01_FLYS/flys_node.html) at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
+## ----figure-cs, fig.show = 'asis', fig.cap = capFig("Cross sections produced to gather input data for SOBEK models used in [FLYS](https://www.bafg.de/DE/5_Informiert/1_Portale_Dienste/FLYS/flys_node.html) at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
 knitr::include_graphics('./screenshot_hydflood_crosssections.png')
 
 ## ----figure-csa, fig.show = 'asis', fig.cap = capFig("Cross section areas derived from the cross sections illustrated in Fig. 2 at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----

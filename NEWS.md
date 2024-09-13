@@ -1,3 +1,12 @@
+# hydflood 0.5.8
+
+* replace scripted html-postprocessing with packaged (`bfgdown::cleanAll`)
+* deactivate time-consuming classifyToPNV() example
+* improve website accessibility
+* move file downloads from `utils::download.file` to `httr2`
+* add waterDepth()-function
+* fix broken urls
+
 # hydflood 0.5.7
 
 * adapt BfG's new corporate design
