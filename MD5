@@ -1,6 +1,6 @@
-5adc99f7b7523d8e066cef1c7652eba6 *DESCRIPTION
+546d73b550eebc5aab05e6d26fc1dc94 *DESCRIPTION
 a5bafcaddce389219ec9542be22d29a9 *NAMESPACE
-07b91561a0c8b7a05e2699f7193de50f *NEWS.md
+931c08ec35b6006c6e5adbe94925975c *NEWS.md
 acd34cda32231b7a19156f4d4575a205 *R/classifyToPNV.R
 d7c6918c0a51d2e13daf4d0ca10ee4c8 *R/createTiles.R
 781c34dfaab41d516eb6225e679a0c11 *R/data.R
@@ -8,7 +8,7 @@ ac309cc42451f73b164e2ab60ed1dbb5 *R/flood1.R
 e107da04107af8889cf871cc0b4a71fc *R/flood2.R
 07756df6f196ac7dd1108f3c838d906f *R/flood3.R
 fdd07e96387d74c887e27983960dc184 *R/flood3Points.R
-949b14d9241185037c950af2d039107a *R/getDEM.R
+a53625ae32881b4e6f6ee22e18edc495 *R/getDEM.R
 9b9461740af33c6c04ea979d53a049b6 *R/hydSpatRaster.R
 a86c16203a35ab5044aa54ad6453f394 *R/hydflood-internal.R
 9ba26a8ca9b9b971e40a09d0c22cf102 *R/hydflood.R
@@ -16,7 +16,7 @@ a86c16203a35ab5044aa54ad6453f394 *R/hydflood-internal.R
 d17d06efd2f7620f0c19533d4fee3524 *R/waterDepth.R
 1ee6d8e6f3093d9aeca7c2a02a1ba251 *R/zzz.R
 c7536e4e13e9e009c4de2890fe6b6e44 *README.md
-18afe5bac6150c390699a01ac5eba72e *build/partial.rdb
+c65de4bec3242715e4c6dad80cb9336d *build/partial.rdb
 a9583bf9fe12d11167b787eba077c99d *build/vignette.rds
 2246716f8b4f31f785330e6604016a50 *data/df.pnv.rda
 bf626c9b0bf997dada143c3b8e0eb5e4 *data/sf.afe.rda
@@ -27,7 +27,7 @@ d2170d62778ab8a594d4e4b43ae0794f *inst/CITATION
 2481af0a575642ed8ea0df6f9ba2c0e3 *inst/REFERENCES.bib
 bd88d0d7d4586df7bf673800b2f7b5b7 *inst/doc/hydflood.R
 d9c723cc6ac62a3487373d5b80511072 *inst/doc/hydflood.Rmd
-52b9f3c28217a43dc69b935db2f704da *inst/doc/hydflood.html
+adb0610639fd32dec70965977628ef89 *inst/doc/hydflood.html
 deaf1f52e45bb534595b6aeb9cb9bcf3 *man/classifyToPNV.Rd
 c337679237bb49c375f22dc747cc4dfb *man/createTiles.Rd
 22d7a192db08b412ecf09e7c2fc71e86 *man/df.pnv.Rd
@@ -57,7 +57,7 @@ c3327ab5ad1cdce50dae0a97e9d01a75 *tests/testthat/test_getDEM.R
 6bb70925636a9c5d4a49f43a6a5e40aa *tests/testthat/test_hydSpatRaster.R
 2dd7ed65c0cccb39a77c88f9e6f54c5f *tests/testthat/test_waterDepth.R
 6a3e4820fb92cc13f8589fc9e42b2902 *vignettes/apa_modified.csl
-a0bee4db3b96389c11740ec9cfe51c7c *vignettes/counts.Rdata
+9a947e2ff5e2ff7e1f6784e37cbef422 *vignettes/counts.Rdata
 2bbf42bcd567bdd033a3f9aea5bb3aaf *vignettes/flood3daily_Dessau.R
 d9c723cc6ac62a3487373d5b80511072 *vignettes/hydflood.Rmd
 bc0bfbfcf0a5abfb60f7631e28cffee3 *vignettes/latex/before_body.tex
