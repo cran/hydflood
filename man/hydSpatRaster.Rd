@@ -103,7 +103,7 @@ recommended to increase \code{options("timeout")}.
 \examples{
 \donttest{
   options("hydflood.datadir" = tempdir())
-  options("timeout" = 120)
+  options("timeout" = 200)
   library(hydflood)
   
   e <- ext(436500, 438000, 5415000, 5416500)

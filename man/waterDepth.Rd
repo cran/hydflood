@@ -62,6 +62,7 @@ resulting flood extent layer is set to 1.
 \examples{
 \donttest{
   options("hydflood.datadir" = tempdir())
+  options("timeout" = 200)
   library(hydflood)
   
   # import the raster data and create a raster stack

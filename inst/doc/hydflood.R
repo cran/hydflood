@@ -86,16 +86,16 @@ bf <- function(x) {
 }
 
 ## ----install-cran, eval = FALSE-----------------------------------------------
-#  install.packages("hydflood")
+# install.packages("hydflood")
 
 ## ----install-git, eval = FALSE------------------------------------------------
-#  install.packages("devtools")
-#  library(devtools)
-#  devtools::install_github("bafg-bund/hydflood")
+# install.packages("devtools")
+# library(devtools)
+# devtools::install_github("bafg-bund/hydflood")
 
 ## ----library-print, eval = FALSE, echo = TRUE---------------------------------
-#  options("hydflood.datadir" = tempdir())
-#  library(hydflood)
+# options("hydflood.datadir" = tempdir())
+# library(hydflood)
 
 ## ----figure-dem, fig.show = 'asis', fig.cap = capFig("Digital elevation model of the waterway (DEM-W, in German: Digitales Geländemodell des Wasserlaufs, DGM-W) with 1 m spatial resolution at the River Elbe near Rosslau and Dessau."), echo = FALSE, error = FALSE, warning = FALSE, message = FALSE, fig.show = 'asis', out.width = "95%", fig.pos="H", fig.align = "center"----
 knitr::include_graphics('./screenshot_hydflood_dem.png')
@@ -110,19 +110,19 @@ knitr::include_graphics('./screenshot_hydflood_crosssectionareas.png')
 knitr::include_graphics('./screenshot_hydflood_crosssectionareas_cs.png')
 
 ## ----init, eval = FALSE, error = FALSE, warning = FALSE, message = FALSE------
-#  # import the raster data and create a raster stack
-#  x <- hydSpatRaster(filename_dem = "data-raw/raster.dem.tif",
-#                     filename_csa = "data-raw/raster.csa.tif")
+# # import the raster data and create a raster stack
+# x <- hydSpatRaster(filename_dem = "data-raw/raster.dem.tif",
+#                    filename_csa = "data-raw/raster.csa.tif")
 
 ## ----seq, eval = FALSE, error = FALSE, warning = FALSE, message = FALSE-------
-#  seq <- seq(as.Date("2016-12-01"), as.Date("2016-12-31"), by = "day")
+# seq <- seq(as.Date("2016-12-01"), as.Date("2016-12-31"), by = "day")
 
 ## ----usage, eval = FALSE, error = FALSE, warning = FALSE, message = FALSE-----
-#  # compute a flood duration
-#  fd <- flood3(x = x, seq = seq)
-#  
-#  # and plot it
-#  plot(fd)
+# # compute a flood duration
+# fd <- flood3(x = x, seq = seq)
+# 
+# # and plot it
+# plot(fd)
 
 ## ----link-flood3daily, eval = is_html, echo = FALSE, results = 'asis'---------
 cat('<p style="text-align: center;"><a href="https://shiny.bafg.de/flood3daily/" target="_blank">https://shiny.bafg.de/flood3daily/</a></p>')

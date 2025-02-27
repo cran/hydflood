@@ -1,8 +1,8 @@
 Package: hydflood
 Type: Package
 Title: Flood Extents and Duration along the Rivers Elbe and Rhine
-Version: 0.5.9
-Date: 2024-10-07
+Version: 0.5.10
+Date: 2025-02-26
 Authors@R: c(person("Arnd", "Weber", email = "arnd.weber@bafg.de",
                     role = c("aut", "cre"), 
                     comment = c(ORCID = "0000-0002-5973-2770")),
@@ -18,7 +18,7 @@ Description: Raster based flood modelling internally using 'hyd1d', an R package
     time 'GIS' approach for flood extent and duration modelling. Computationally
     demanding annual flood durations have been computed already and data
     products were published by Weber (2022) <doi:10.1594/PANGAEA.948042>.
-Depends: R (>= 4.0.0), sf, terra, raster, hyd1d
+Depends: R (>= 4.1.0), sf, terra, raster, hyd1d
 Imports: stats, Rdpack, grDevices, httr2, curl
 Suggests: knitr, rmarkdown, devtools, pkgdown, roxygen2, testthat,
         plot3D, shiny, shinyjs, shiny.i18n, leaflet, leaflet.extras,
@@ -36,10 +36,10 @@ VignetteBuilder: knitr
 BugReports: https://github.com/bafg-bund/hydflood/issues/
 URL: https://hydflood.bafg.de, https://github.com/bafg-bund/hydflood
 NeedsCompilation: no
-Packaged: 2024-10-07 15:53:37 UTC; WeberA
+Packaged: 2025-02-27 09:18:01 UTC; WeberA
 Author: Arnd Weber [aut, cre] (<https://orcid.org/0000-0002-5973-2770>),
   Stephan Rosenzweig [ctb],
   Benjamin Eberhardt [ctb]
 Maintainer: Arnd Weber <arnd.weber@bafg.de>
 Repository: CRAN
-Date/Publication: 2024-10-07 16:50:02 UTC
+Date/Publication: 2025-02-27 10:20:02 UTC

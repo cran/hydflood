@@ -57,6 +57,7 @@ location can also be determined through the environmental variable
 \examples{
 \donttest{
   options("hydflood.datadir" = tempdir())
+  options("timeout" = 200)
   library(hydflood)
   
   # create a random points object
